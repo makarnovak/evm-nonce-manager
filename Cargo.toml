@@ -1,0 +1,10 @@
+[package]
+name = "evm-nonce-manager"
+version = "0.1.0"
+edition = "2021"
+description = "Single-wallet EVM nonce manager: pending-state only, advance on accepted transactions, resync on divergence"
+license = "MIT"
+
+[dependencies]
+alloy = { version = "1", features = ["provider-http", "rpc-types", "json-rpc", "network", "transports"] }
+serde_json = "1"
