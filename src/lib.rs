@@ -1,3 +1,15 @@
+//! `evm-nonce-manager` — a single-wallet EVM nonce manager.
+//!
+//! One issuance point for the nonces of one wallet. The chain's *pending*
+//! state is the only source of truth: initialisation and every resync read
+//! `eth_getTransactionCount(address, "pending")`; `peek()` never advances,
+//! so a transaction can be rebuilt and re-signed with the same nonce;
+//! `mark_accepted()` advances by exactly one, only after the node accepted
+//! the transaction; `resync()` resets to fresh chain pending on divergence.
+//!
+//! (The original design notes below are in Ukrainian, the author's working
+//! language.)
+//!
 //! nonce — a single-wallet EVM nonce manager.
 //!
 //! Design rule: nonce — тільки з pending-стану ланцюга,

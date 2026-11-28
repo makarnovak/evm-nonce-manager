@@ -3,7 +3,12 @@ name = "evm-nonce-manager"
 version = "0.1.0"
 edition = "2021"
 description = "Single-wallet EVM nonce manager: pending-state only, advance on accepted transactions, resync on divergence"
-license = "MIT"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/makarnovak/evm-nonce-manager"
+homepage = "https://github.com/makarnovak/evm-nonce-manager"
+readme = "README.md"
+keywords = ["ethereum", "evm", "nonce", "transactions", "alloy"]
+categories = ["cryptography::cryptocurrencies"]
 
 [dependencies]
 alloy = { version = "1", features = ["provider-http", "rpc-types", "json-rpc", "network", "transports"] }
